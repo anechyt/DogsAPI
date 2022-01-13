@@ -15,8 +15,4 @@
     <ProjectReference Include="..\..\Core\DogsAPI.Backend.Core\DogsAPI.Backend.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="CQRS\Queries\" />
-  </ItemGroup>
-
 </Project>

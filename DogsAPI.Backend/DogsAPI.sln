@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DogsAPI.Backend.Core", "src
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DogsAPI.Backend.DAL", "src\Infrastructure\DogsAPI.Backend.DAL\DogsAPI.Backend.DAL.csproj", "{03DA83A6-B088-4DEE-B06A-B484C3234E61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DogsAPI.Backend.Application", "src\Application\DogsAPI.Backend.Application\DogsAPI.Backend.Application.csproj", "{3B8D13C5-BCA1-4EB3-B422-0517A6BFF08A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DogsAPI.Backend.Application", "src\Application\DogsAPI.Backend.Application\DogsAPI.Backend.Application.csproj", "{3B8D13C5-BCA1-4EB3-B422-0517A6BFF08A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DogsAPI.Backend.UI", "src\UI\DogsAPI.Backend.UI\DogsAPI.Backend.UI.csproj", "{DEA82AE7-F31B-480B-B7B1-AACDF787AD79}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +69,18 @@ Global
 		{3B8D13C5-BCA1-4EB3-B422-0517A6BFF08A}.Release|x64.Build.0 = Release|Any CPU
 		{3B8D13C5-BCA1-4EB3-B422-0517A6BFF08A}.Release|x86.ActiveCfg = Release|Any CPU
 		{3B8D13C5-BCA1-4EB3-B422-0517A6BFF08A}.Release|x86.Build.0 = Release|Any CPU
+		{DEA82AE7-F31B-480B-B7B1-AACDF787AD79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEA82AE7-F31B-480B-B7B1-AACDF787AD79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEA82AE7-F31B-480B-B7B1-AACDF787AD79}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DEA82AE7-F31B-480B-B7B1-AACDF787AD79}.Debug|x64.Build.0 = Debug|Any CPU
+		{DEA82AE7-F31B-480B-B7B1-AACDF787AD79}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DEA82AE7-F31B-480B-B7B1-AACDF787AD79}.Debug|x86.Build.0 = Debug|Any CPU
+		{DEA82AE7-F31B-480B-B7B1-AACDF787AD79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEA82AE7-F31B-480B-B7B1-AACDF787AD79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEA82AE7-F31B-480B-B7B1-AACDF787AD79}.Release|x64.ActiveCfg = Release|Any CPU
+		{DEA82AE7-F31B-480B-B7B1-AACDF787AD79}.Release|x64.Build.0 = Release|Any CPU
+		{DEA82AE7-F31B-480B-B7B1-AACDF787AD79}.Release|x86.ActiveCfg = Release|Any CPU
+		{DEA82AE7-F31B-480B-B7B1-AACDF787AD79}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,6 +94,7 @@ Global
 		{4E9DCE53-D4EF-4579-8795-A2C6A97C2DCD} = {12C85F12-A7EA-4E2F-8306-CBD372ADF5EC}
 		{03DA83A6-B088-4DEE-B06A-B484C3234E61} = {41CAF76C-D1A5-4B79-A3F6-F8E51BD289A1}
 		{3B8D13C5-BCA1-4EB3-B422-0517A6BFF08A} = {470DE4D9-3DF0-426A-8385-50C6D92F13A5}
+		{DEA82AE7-F31B-480B-B7B1-AACDF787AD79} = {4A8C5C5A-1FCF-4D0A-82A5-1D6BF072BD98}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3D01F3CC-C725-4044-8E35-D0B6B13B4045}
