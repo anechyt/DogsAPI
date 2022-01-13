@@ -14,21 +14,21 @@ namespace DogsAPI.Backend.Core.Entities
         public float TailLength { get; set; }
         public float Weight { get; set; }
 
-        public Dog(string name, string color, float tailLength, float weight)
-        {
-            Name = name ?? throw new ArgumentNullException(nameof(name));
-            Color = color ?? throw new ArgumentNullException(nameof(color));
-            TailLength = tailLength;
-            Weight = weight;
+        //public Dog(string name, string color, float tailLength, float weight)
+        //{
+        //    Name = name ?? throw new ArgumentNullException(nameof(name));
+        //    Color = color ?? throw new ArgumentNullException(nameof(color));
+        //    TailLength = tailLength;
+        //    Weight = weight;
 
-            if(tailLength < 0)
-            {
-                throw new Exception("Value must be positive!");
-            }
-            if (weight < 0)
-            {
-                throw new Exception("Value must be positive!");
-            }
-        }
+        //    if(tailLength < 0)
+        //    {
+        //        throw new Exception("Value must be positive!");
+        //    }
+        //    if (weight < 0)
+        //    {
+        //        throw new Exception("Value must be positive!");
+        //    }
+        //}
     }
 }

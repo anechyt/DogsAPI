@@ -16,6 +16,8 @@ namespace DogsAPI.Backend.DAL.EntityConfiguration
             builder.HasKey(dog => dog.Id);
             builder.HasIndex(dog => dog.Id).IsUnique();
             builder.Property(dog => dog.Name).HasMaxLength(25).IsRequired();
+            builder.HasIndex(dog => dog.Name).IsUnique();
+            builder.Property(dog => dog.Color).IsRequired().HasMaxLength(25);
             builder.Property(dog => dog.TailLength).IsRequired();
             builder.Property(dog => dog.Weight).IsRequired();
         }
