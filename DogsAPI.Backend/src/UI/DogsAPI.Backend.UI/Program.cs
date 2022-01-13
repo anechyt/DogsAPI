@@ -27,7 +27,7 @@ namespace DogsAPI.Backend.UI
                 }
                 catch(Exception exception)
                 {
-
+                    throw new Exception(exception.Message);
                 }
             }
 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DogsAPI.Backend.Application.CQRS.Commands.CreateDog
 {
-    public class CreateDogCommand : IRequest<Guid>
+    public partial class CreateDogCommand : IRequest<Guid>
     {
         public string Name { get; set; }
         public string Color { get; set; }

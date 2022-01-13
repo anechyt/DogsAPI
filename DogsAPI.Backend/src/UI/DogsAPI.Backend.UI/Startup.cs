@@ -39,6 +39,7 @@ namespace DogsAPI.Backend.UI
 
             services.AddApplication();
             services.AddPersistence(Configuration);
+            services.AddControllers();
 
             services.AddCors(options =>
             {
@@ -49,6 +50,10 @@ namespace DogsAPI.Backend.UI
                     policy.AllowAnyOrigin();
                 });
             });
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Dogs.Api", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,8 +62,8 @@ namespace DogsAPI.Backend.UI
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                //app.UseSwagger();
-                //app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "DogsAPI.Backend.UI v1"));
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "DogsAPI.Backend.UI v1"));
             }
 
             //app.UseHttpsRedirection();
