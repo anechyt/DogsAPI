@@ -5,7 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Application\DogsAPI.Backend.Application\DogsAPI.Backend.Application.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\DogsAPI.Backend.DAL\DogsAPI.Backend.DAL.csproj" />
   </ItemGroup>
 
 </Project>

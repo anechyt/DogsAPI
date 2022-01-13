@@ -1,3 +1,7 @@
+using DogsAPI.Backend.Application;
+using DogsAPI.Backend.Application.Common.Intefaces;
+using DogsAPI.Backend.Application.Common.Mapping;
+using DogsAPI.Backend.DAL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -10,6 +14,7 @@ using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace DogsAPI.Backend.UI
@@ -26,11 +31,23 @@ namespace DogsAPI.Backend.UI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
-            services.AddControllers();
-            services.AddSwaggerGen(c =>
+            services.AddAutoMapper(config =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "DogsAPI.Backend.UI", Version = "v1" });
+                config.AddProfile(new AssemblyMappingProfile(Assembly.GetExecutingAssembly()));
+                config.AddProfile(new AssemblyMappingProfile(typeof(IDogsAPIDbContext).Assembly));
+            });
+
+            services.AddApplication();
+            services.AddPersistence(Configuration);
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll", policy =>
+                {
+                    policy.AllowAnyHeader();
+                    policy.AllowAnyMethod();
+                    policy.AllowAnyOrigin();
+                });
             });
         }
 
@@ -40,15 +57,17 @@ namespace DogsAPI.Backend.UI
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "DogsAPI.Backend.UI v1"));
+                //app.UseSwagger();
+                //app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "DogsAPI.Backend.UI v1"));
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseHttpsRedirection();
+            app.UseCors("AllowAll");
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
